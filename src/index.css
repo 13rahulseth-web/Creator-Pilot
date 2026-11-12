@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    --canvas-bg: #F9F8F5;
+    --color-magenta-wine: #721246;
+    --color-magenta-wine-hover: #5c0e38;
+    --color-magenta-wine-active: #721246;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--canvas-bg);
+    color: #1c1917;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Global Button Styles: Clicked, Focused, and Active States */
+button {
+  transition-property: color, background-color, border-color, outline-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Whenever any button is clicked or in an active state */
+button:active,
+button:active:hover,
+button:active:focus {
+  background-color: var(--color-magenta-wine) !important;
+  color: #ffffff !important;
+  border-color: var(--color-magenta-wine) !important;
+}
+
+/* Whenever any button is focused */
+button:focus-visible {
+  outline: 2px solid var(--color-magenta-wine) !important;
+  outline-offset: 2px;
+}
+
+/* Specifically change background from black to magenta wine whenever focused, clicked, or active */
+button.bg-stone-900:focus,
+button.bg-stone-900:focus-visible,
+button.bg-stone-900:active,
+button.bg-black:focus,
+button.bg-black:focus-visible,
+button.bg-black:active,
+button[class*="bg-stone-900"]:focus,
+button[class*="bg-stone-900"]:focus-visible,
+button[class*="bg-stone-900"]:active,
+button[class*="bg-black"]:focus,
+button[class*="bg-black"]:focus-visible,
+button[class*="bg-black"]:active,
+.bg-stone-900:active,
+.bg-stone-950:active,
+.bg-black:active,
+.hover\:bg-stone-800:active,
+.hover\:bg-stone-900:active,
+.hover\:bg-black:active {
+  background-color: var(--color-magenta-wine) !important;
+  color: #ffffff !important;
+  border-color: var(--color-magenta-wine) !important;
+}
+
+/* Any button with active indicator, selected state, or active attribute */
+button[aria-pressed="true"],
+button[aria-selected="true"],
+button[data-active="true"],
+button.active {
+  background-color: var(--color-magenta-wine) !important;
+  color: #ffffff !important;
+  border-color: var(--color-magenta-wine) !important;
+}
+
+/* Custom scrollbars for clean studio feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 113, 108, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 113, 108, 0.4);
+}

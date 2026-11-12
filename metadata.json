@@ -1,0 +1,6 @@
+{
+  "name": "CreatorPilot AI",
+  "description": "One Video. Infinite Possibilities. Autonomous AI Content Creation & Distribution Studio for Solo Creators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
